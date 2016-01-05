@@ -31,8 +31,8 @@
         return new Promise(function(resolve,reject){
 
             var prompt = $('<div>', {class: 'prompt'}),
-                cancel = $('<button>').html('Cancel'),
-                ok = $('<button>').html('OK');
+                cancel = $('<button>', {class: 'cancel'}).html('Cancel'),
+                ok = $('<button>', {class: 'ok'}).html('OK');
 
             cancel.click(close).click(reject);
             ok.click(close).click(resolve);
