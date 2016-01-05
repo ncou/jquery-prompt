@@ -26,37 +26,18 @@
         factory(jQuery);
     }
 }(function ($) {
-    
+
     $.prompt = function(text) {
         return new Promise(function(resolve,reject){
 
-            var prompt = $('<div>'),
+            var prompt = $('<div>', {class: 'prompt'}),
                 cancel = $('<button>').html('Cancel'),
                 ok = $('<button>').html('OK');
 
             cancel.click(close).click(reject);
             ok.click(close).click(resolve);
 
-            $('body').append(
-                prompt.css({
-                    display: 'flex',
-                    position: 'fixed',
-                    width: '100%',
-                    height: '100%',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }).append(
-                    $('<div>').css({
-                        background: '#eee',
-                        padding: '20px'
-                    }).append(
-                        $('<div>').html(text),
-                        cancel,
-                        ok)));
+            $('body').append(prompt.append($('<div>').append($('<div>').html(text), cancel, ok)));
 
             function close(){
                 prompt.remove();
