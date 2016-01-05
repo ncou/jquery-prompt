@@ -1,0 +1,11 @@
+{
+    "name": "jquery-prompt",
+    "main": "jquery.prompt.js",
+    "version": "1.0.0",
+    "homepage": "https://github.com/outeredge/jquery-prompt",
+    "authors": [
+        "Minlare <michaelwindell@gmail.com>"
+    ],
+    "description": "jQuery prompt using promises",
+    "license": "MIT"
+}
